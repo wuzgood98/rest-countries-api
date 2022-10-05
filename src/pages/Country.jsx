@@ -66,7 +66,8 @@ const Country = () => {
   }, [])
 
   useEffect(() => {
-    fetchCountryByName(name);
+    const countryName = name.split('-').join(' ');
+    fetchCountryByName(countryName);
   }, [name])
 
   return (
@@ -109,10 +110,11 @@ const Country = () => {
                     <h1 className="text-lg font-semibold text-veryDarkBlueLMT dark:text-white">Border Countries: </h1>
                     <div className="flex items-center flex-wrap gap-2">
                       {borderCountries && borderCountries.map((country, i) => {
+                        const countryName = country?.name.common.toLowerCase().split('').join('-')
                         return (
                           <Link
                             key={i}
-                            to={`/country-details/${country?.name.common}`}
+                            to={`/country-details/${countryName}`}
                             state={country}
                             className="w-max px-6 py-1 bg-white drop-shadow-md flex items-center justify-center gap-2 group dark:bg-darkBlue dark:text-white"
                           >

@@ -47,7 +47,7 @@ const Header = () => {
               />
             }
           </button>
-          <h3 className='font-bold text-veryDarkBlueLMT capitalize dark:text-white transition-colors'>{themeName}</h3>
+          <h3 className='font-normal text-veryDarkBlueLMT capitalize dark:text-white transition-colors'>{themeName}</h3>
         </div>
       </div>
     </header>

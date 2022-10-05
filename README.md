@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Screenshot
 
-![REST Countries API](./screenshot.png)
+![REST Countries API](./screenshot.PNG)
 
 ### Links
 

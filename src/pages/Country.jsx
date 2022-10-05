@@ -110,7 +110,7 @@ const Country = () => {
                     <h1 className="text-lg font-semibold text-veryDarkBlueLMT dark:text-white">Border Countries: </h1>
                     <div className="flex items-center flex-wrap gap-2">
                       {borderCountries && borderCountries.map((country, i) => {
-                        const countryName = country?.name.common.toLowerCase().split('').join('-')
+                        const countryName = country?.name.common.toLowerCase().split(' ').join('-')
                         return (
                           <Link
                             key={i}

@@ -54,7 +54,7 @@ This actually my first project working with react router dom. Started learning r
 ```js
 const { paramName } = useParams();
 
-fetch('https://www.example-api.com/name/${paramName}')
+fetch(`https://www.example-api.com/name/${paramName}`)
   .then((result) => result.data)
   .catch((error) => console.log(error))
 ```

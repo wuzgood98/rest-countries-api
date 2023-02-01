@@ -62,12 +62,29 @@ const Country = () => {
   const borderCountries = countries && countries.filter((country) => border && border.includes(country.cca3))
 
   useEffect(() => {
-    fetchAllCountries()
+    let unsubscribed = false
+    
+    if(!unsubscribed) {
+      fetchAllCountries()
+    }
+    
+    return () => {
+      unsubscribed = true
+    }
   }, [])
 
   useEffect(() => {
     const countryName = name.split('-').join(' ');
-    fetchCountryByName(countryName);
+    
+    let unsubscribed = false
+    
+    if(!unsubscribed) {
+      fetchCountryByName(countryName);
+    }
+    
+    return () => {
+      unsubscribed = true
+    }
   }, [name])
 
   return (

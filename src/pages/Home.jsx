@@ -54,7 +54,15 @@ const Home = () => {
   }, [scrollY])
 
   useEffect(() => {
-    fetchAllCountries()
+    let unsubscribed = false
+    
+    if(!unsubscribed) {
+      fetchAllCountries()
+    }
+    
+    return () => {
+      unsubscribed = true
+    }
   }, [])
 
   const scrollToTop = () => {
